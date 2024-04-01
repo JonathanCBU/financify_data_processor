@@ -1,0 +1,64 @@
+[tool.poetry]
+name = "financify_data_processor"
+version = "0.0.0"
+description = "A simple python exercise for getting data into the financify database"
+authors = ["Jonathan Cook <jcookbme@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "financify_data_processor"}]
+repository = "https://github.com/JonathanCBU/financify_data_processor"
+homepage = "https://github.com/JonathanCBU/financify_data_processor"
+
+[tool.poetry.scripts]
+ci = "financify_data_processor.__ci__:main"
+main = "financify_data_processor.__main__:main"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+toml = "^0.10.2"
+pypdf = "^4.1.0"
+python-dotenv = "^1.0.1"
+pymysql = "^1.1.0"
+
+
+[tool.poetry.group.dev.dependencies]
+tox = "^4.0.16"
+virtualenv = "20.21.0"
+bandit = "^1.7.1"
+black = {version = "^22.12.0", allow-prereleases = true}
+isort = {extras = ["colors"], version = "^5.11.4"}
+mypy = "^0.991"
+mypy-extensions = "^0.4.3"
+pylint = "^2.15.9"
+toml = "^0.10.2"
+ipython = "*"
+
+[tool.black]
+target-version = ["py310"]
+line-length = 88
+color = true
+exclude = "autogen"
+
+[tool.isort]
+py_version = 310
+line_length = 88
+profile = "black"
+color_output = true
+indent = 4
+
+[tool.robotidy]
+verbose = false
+
+[tool.mypy]
+python_version = "3.10"
+pretty = true
+show_traceback = true
+color_output = true
+ignore_missing_imports = true
+strict = true
+
+[tool.pylint]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
