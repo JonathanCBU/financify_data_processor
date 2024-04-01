@@ -19,9 +19,3 @@ info_patterns = {
         "date": r"Loan Information as of (\d{2}/\d{2}/\d{2})",
     },
 }
-db_login = {
-    "host": "jonathan_desk",
-    "user": "financify_pipeline",
-    "password": "7XVFwi6VjEP64r8oK3jx",
-    "database": "financify_db",
-}
