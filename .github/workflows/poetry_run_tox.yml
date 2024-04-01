@@ -31,5 +31,5 @@ jobs:
         poetry run tox -e typing
     - name: Run isort and black checks
       run: |
-        poetry run isort --diff --check --settings-path pyproject.toml ./financify/
-        poetry run black --diff --check --config pyproject.toml ./financify/
+        poetry run isort --diff --check --settings-path pyproject.toml ./financify_data_processor/
+        poetry run black --diff --check --config pyproject.toml ./financify_data_processor/
