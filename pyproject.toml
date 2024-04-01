@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "financify_data_processor"
-version = "0.0.0"
+version = "0.1.0"
 description = "A simple python exercise for getting data into the financify database"
 authors = ["Jonathan Cook <jcookbme@gmail.com>"]
 license = "MIT"
