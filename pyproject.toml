@@ -12,13 +12,13 @@ homepage = "https://github.com/JonathanCBU/financify_data_processor"
 [tool.poetry.scripts]
 ci = "financify_data_processor.__ci__:main"
 main = "financify_data_processor.__main__:main"
+example = "financify_data_processor.__example__:main"
 
 [tool.poetry.dependencies]
 python = "^3.10"
 toml = "^0.10.2"
 pypdf = "^4.1.0"
 python-dotenv = "^1.0.1"
-pymysql = "^1.1.0"
 
 
 [tool.poetry.group.dev.dependencies]
@@ -45,9 +45,6 @@ line_length = 88
 profile = "black"
 color_output = true
 indent = 4
-
-[tool.robotidy]
-verbose = false
 
 [tool.mypy]
 python_version = "3.10"
