@@ -2,7 +2,6 @@
 
 import os
 import re
-from dataclasses import dataclass
 from datetime import datetime
 from typing import List
 
@@ -11,23 +10,15 @@ from pypdf import PdfReader
 
 from financify_data_processor.config import mysql_cfg
 from financify_data_processor.library.exceptions import ParsingException
-
-
-@dataclass
-class Record:
-    """Statement record data type"""
-
-    date: str
-    value: float
-    asset_type: str
-    id_num: int
+from financify_data_processor.library.record_classes import Statements
 
 
 def main() -> None:
     """Parse statement PDFs"""
 
     load_dotenv()
-    records: List[Record] = []
+    print(os.path.join(os.path.dirname(os.path.abspath(__file__)), "example_db"))
+    records: List[Statements] = []
     for doc in os.listdir(os.environ["STATEMENTS"]):
         if doc.endswith(".pdf"):
             reader = PdfReader(os.path.join(os.environ["STATEMENTS"], doc))
@@ -55,11 +46,10 @@ def main() -> None:
             else:
                 date_info = date.group(1)
             records.append(
-                Record(
+                Statements(
                     date=datetime.strptime(date_info, date_fmt).strftime("%Y-%m-%d"),
                     value=float(val.group(1)),
                     asset_type=statement_type,
-                    id_num=1,
                 )
             )
     net_worth: float = 0
