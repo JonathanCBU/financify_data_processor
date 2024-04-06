@@ -10,11 +10,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+* sqlite3 example entry point
+
 ### Fixed
 
 ### Changed
 
 ### Removed
+
+* pymysql module (sqlite isn't super secure but it's fine for this project)
 
 ## [0.1.0] - 2024-04-01
 
